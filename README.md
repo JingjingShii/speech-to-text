@@ -1,6 +1,8 @@
 # deepspeech 
 This [MLHUB](https://mlhub.ai/) provides a demonstration and command line tools built from the [pre-trained deepspeech model](https://deepspeech.readthedocs.io/en/v0.9.3/) provided by Mozilla. The model is trained by machine learning techniques based on [Baidu's Deep Speech research paper](https://arxiv.org/abs/1412.5567). This package can take an audio file as the input and transcribe it to the text as the output. 
 
+The deepspeech source code is available from [https://github.com/mozilla/DeepSpeech](https://github.com/mozilla/DeepSpeech).
+
 ## Quick Start
 
 Download the pre-trained model
