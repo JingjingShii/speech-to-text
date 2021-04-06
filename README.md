@@ -20,7 +20,7 @@ $ tar xvf audio-0.9.3.tar.gz
 ```
 Run demo
 ```console
-$ ml demo deepspeech --model /path/to/working/directory/deepspeech-0.9.30models.pbmm --audio /path/to/working/directory/audio/2830-3980-0043.wav --scorer /path/to/working/directory/deepspeech-0.9.3-models.scorer
+$ ml demo deepspeech --model /path/to/working/directory/deepspeech-0.9.3-models.pbmm --audio /path/to/working/directory/audio/2830-3980-0043.wav --scorer /path/to/working/directory/deepspeech-0.9.3-models.scorer
 ```
 ## Usage
 
@@ -29,11 +29,11 @@ $ ml demo deepspeech --model /path/to/working/directory/deepspeech-0.9.30models.
 $ pip3 install mlhub
 $ ml install   deepspeech
 $ ml configure deepspeech
-$ ml demo deepspeech --model /path/to/working/directory/deepspeech-0.9.30models.pbmm --audio /path/to/working/directory/audio/2830-3980-0043.wav --scorer /path/to/working/directory/deepspeech-0.9.3-models.scorer
+$ ml demo deepspeech --model /path/to/working/directory/deepspeech-0.9.3-models.pbmm --audio /path/to/working/directory/audio/2830-3980-0043.wav --scorer /path/to/working/directory/deepspeech-0.9.3-models.scorer
 ```
 * Command line tools
 ```console
-$ ml demo deepspeech --model [(--model) <pre-trained model>] [(--scorer) <external score file>] [(--audio) <audio file>] [(--beam_width) <beam width for the CTC decoder>] [(--lm_alpha) <langauge model weight>] [(--lm_beta) <word insertion bonus>] [(--version) <print version>] [(--extended) <output string>] [(--json) <output json>] [(--candidate_transcripts) <number of candidate transcripts>] [(--hot_words) <hot-words>]
+$ ml demo deepspeech --model [(--model) <pre-trained model>] [(--scorer) <external score file>] [(--audio) <audio file>] [(--beam_width) <beam width for the CTC decoder>] [(--lm_alpha) <langauge model weight>] [(--lm_beta) <word insertion bonus>] [(--version) <print version and exists>] [(--extended) <output string>] [(--json) <output json>] [(--candidate_transcripts) <number of candidate transcripts to include in JSON output>] [(--hot_words) <hot-words>]
 ```
 * Generate your own audio file
 
