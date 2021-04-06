@@ -3,11 +3,14 @@ This [MLHUB](https://mlhub.ai/) provides a demonstration and command line tools 
 
 The deepspeech source code is available from [https://github.com/mozilla/DeepSpeech](https://github.com/mozilla/DeepSpeech).
 
+Note: this pre-trained model only supports English. 
+
 ## Quick Start
 
-Download the pre-trained model
+Download pre-trained English model files
 ```console
 $ wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.pbmm
+$ wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.scorer
 ```
 
 Download example audio files
@@ -17,7 +20,7 @@ $ tar xvf audio-0.9.3.tar.gz
 ```
 Run demo
 ```console
-$ ml demo deepspeech --model deepspeech-0.9.30models.pbmm --audio audio/2830-3980-0043.wav
+$ ml demo deepspeech --model /path/to/working/directory/deepspeech-0.9.30models.pbmm --audio /path/to/working/directory/audio/2830-3980-0043.wav --scorer /path/to/working/directory/deepspeech-0.9.3-models.scorer
 ```
 ## Usage
 
@@ -26,9 +29,16 @@ $ ml demo deepspeech --model deepspeech-0.9.30models.pbmm --audio audio/2830-398
 $ pip3 install mlhub
 $ ml install   deepspeech
 $ ml configure deepspeech
-$ ml demo deepspeech --model deepspeech-0.9.30models.pbmm --audio audio/2830-3980-0043.wav
+$ ml demo deepspeech --model /path/to/working/directory/deepspeech-0.9.30models.pbmm --audio /path/to/working/directory/audio/2830-3980-0043.wav --scorer /path/to/working/directory/deepspeech-0.9.3-models.scorer
 ```
 * Command line tools
 ```console
 $ ml demo deepspeech --model [(--model) <pre-trained model>] [(--scorer) <external score file>] [(--audio) <audio file>] [(--beam_width) <beam width for the CTC decoder>] [(--lm_alpha) <langauge model weight>] [(--lm_beta) <word insertion bonus>] [(--version) <print version>] [(--extended) <output string>] [(--json) <output json>] [(--candidate_transcripts) <number of candidate transcripts>] [(--hot_words) <hot-words>]
+```
+* Generate your own audio file
+
+Since the pre-trained model only supports 16kHz audio file, here we use```sox```to resample the audio file
+```console
+$ sudo apt-get install -y sox
+$ sox original.wav -r 16000 after.wav
 ```
