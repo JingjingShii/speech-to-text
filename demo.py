@@ -9,6 +9,7 @@ import subprocess
 import sys
 import wave
 import json
+import os
 
 from deepspeech import Model, version
 from timeit import default_timer as timer
@@ -113,7 +114,7 @@ def main():
                         help='Hot-words and their boosts.')
     args = parser.parse_args()
 
-    model = "deepspeech-0.9.3-models.pbmm"
+    model = os.path.join(os.getcwd(), "deepspeech-0.9.3-models.pbmm")
     print('Loading model from file {}'.format(model), file=sys.stderr)
     model_load_start = timer()
     # sphinx-doc: python_ref_model_start
