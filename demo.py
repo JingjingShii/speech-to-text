@@ -10,6 +10,7 @@ import sys
 import wave
 import json
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # or any {'0', '1', '2'}
 
 from deepspeech import Model, version
 from timeit import default_timer as timer
@@ -114,10 +115,6 @@ def main():
                         help='Hot-words and their boosts.')
     args = parser.parse_args()
 
-    #model = os.path.join(os.getcwd(), "deepspeech-0.9.3-models.pbmm")
-    #print(model)
-    #print(os.path.exists(r"../deepspeech/deepspeech-0.9.3-models.pbmm"))
-    print('Loading model from file {}'.format(args.model), file=sys.stderr)
     model_load_start = timer()
     # sphinx-doc: python_ref_model_start
     ds = Model(args.model)
@@ -169,6 +166,7 @@ def main():
     # sphinx-doc: python_ref_inference_stop
     inference_end = timer() - inference_start
     print('Inference took %0.3fs for %0.3fs audio file.' % (inference_end, audio_length), file=sys.stderr)
+
 
 if __name__ == '__main__':
     main()

@@ -17,4 +17,4 @@ dependencies:
     - demo.py
 
 commands:
-  demo       : Demonstrate Speech-To-Text
+  demo       : Demonstrate deepspeech
