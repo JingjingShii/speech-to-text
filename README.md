@@ -33,7 +33,11 @@ $ ml demo deepspeech --model /path/to/working/directory/deepspeech-0.9.3-models.
 ```
 * Command line tools
 ```console
-$ ml demo deepspeech --model [(--model) <pre-trained model>] [(--scorer) <external score file>] [(--audio) <audio file>] [(--beam_width) <beam width for the CTC decoder>] [(--lm_alpha) <langauge model weight>] [(--lm_beta) <word insertion bonus>] [(--version) <print version and exists>] [(--extended) <Output string from extended metadata>] [(--json) <Output json from metadata with timestamp of each word>] [(--candidate_transcripts) <number of candidate transcripts to include in JSON output>] [(--hot_words) <hot-words>]
+$ ml demo deepspeech --model [(--model) <pre-trained model>] [(--scorer) <external score file>] [(--audio) <audio file>]
+[(--beam_width) <beam width for the CTC decoder>] [(--lm_alpha) <langauge model weight>] [(--lm_beta) <word insertion bonus>]
+[(--version) <print version and exists>] [(--extended) <Output string from extended metadata>] 
+[(--json) <Output json from metadata with timestamp of each word>] [(--candidate_transcripts) <number of candidate transcripts to include in JSON output>]
+[(--hot_words) <hot-words>]
 ```
 * Generate your own audio file
 
