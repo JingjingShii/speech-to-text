@@ -90,8 +90,8 @@ class VersionAction(argparse.Action):
 
 def main():
     parser = argparse.ArgumentParser(description='Running DeepSpeech inference.')
-    # parser.add_argument('--model', required=True,
-    #                     help='Path to the model (protocol buffer binary file)')
+    parser.add_argument('--model', required=True,
+                         help='Path to the model (protocol buffer binary file)')
     parser.add_argument('--scorer', required=False,
                         help='Path to the external scorer file')
     parser.add_argument('--audio', required=True,
@@ -114,11 +114,13 @@ def main():
                         help='Hot-words and their boosts.')
     args = parser.parse_args()
 
-    model = os.path.join(os.getcwd(), "deepspeech-0.9.3-models.pbmm")
-    print('Loading model from file {}'.format(model), file=sys.stderr)
+    #model = os.path.join(os.getcwd(), "deepspeech-0.9.3-models.pbmm")
+    #print(model)
+    #print(os.path.exists(r"../deepspeech/deepspeech-0.9.3-models.pbmm"))
+    print('Loading model from file {}'.format(args.model), file=sys.stderr)
     model_load_start = timer()
     # sphinx-doc: python_ref_model_start
-    ds = Model(model)
+    ds = Model(args.model)
     # sphinx-doc: python_ref_model_stop
     model_load_end = timer() - model_load_start
     print('Loaded model in {:.3}s.'.format(model_load_end), file=sys.stderr)

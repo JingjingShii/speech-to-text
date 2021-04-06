@@ -15,7 +15,6 @@ dependencies:
   files:
     - README.md
     - demo.py
-    - deepspeech-0.9.3-models.pbmm
 
 commands:
   demo       : Demonstrate Speech-To-Text
